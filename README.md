@@ -18,27 +18,19 @@ The [spice simulation](full_spice_sim.cir) is annotated. You can repeat the expe
 
 # Results
 
-# tt_mm corner
+# montecarlo tt_mm corner
 
-fails with 10n timestep
-
-works with 5n
-
-    tran 5n 40u 
-
-fails with 10
-
-trying longer clock period
-
-    Vclk clk 0 PULSE {vcc} 0 0.5u 1n 1n 2u 4u
+* works with [5n timestep](plots/mc/5ns)
+* fails with [10n timestep](plots/mc/10ns)
+* fails with [10n timestep and 2x slower clock](plots/mc/10ns)
 
 ## tt corner
 
-works with 5n timestep
-works with 10n timestep
-fails with 20n timestep
+* works with [5n timestep](plots/tt/5ns)
+* works with [10n timestep](plots/tt/10ns)
+* fails with [20n timestep](plots/tt/20ns)
 
-## building the spice from the verilog
+# Building the spice from the Verilog
 
 * use openlane with the config in ./openlane to create the gds
 * open the resulting gds file in magic, and then run the following commands:

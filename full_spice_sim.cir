@@ -1,15 +1,20 @@
 * r2r mixed signal
 
+* choose tt or tt_mc corner
 *.lib /home/matt/work/asic-workshop/shuttle-2404/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
 .lib /home/matt/work/asic-workshop/shuttle-2404/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+* the counter spice extracted from the GDS
 .include "count.sim.spice"
 
+* instantiate the counter
 Xtt 0 vcc clk count[0] count[1] count[2] count[3] rst_n r2r_dac_control
 
+* power supply
 .param vcc=1.8
 vcc vcc 0 {vcc}
 
-* Digital clock signal
+* clock signal
 Vclk clk 0 PULSE {vcc} 0 0.5u 1n 1n 1u 2u
 
 * reset signal with PULSE(V1 V2 Tdelay Trise Tfall Ton Tperiod)
