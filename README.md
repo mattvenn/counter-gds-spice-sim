@@ -18,6 +18,9 @@ The [spice simulation](full_spice_sim.cir) is annotated. You can repeat the expe
 
 # Results
 
+* Checked with ngspice 42 and 43. 
+* PDK was Sky130 installed at /home/matt/.volare/volare/sky130/versions/78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc
+
 # montecarlo tt_mm corner
 
 * works with [5n timestep](plots/mc/5ns)
@@ -32,8 +35,8 @@ The [spice simulation](full_spice_sim.cir) is annotated. You can repeat the expe
 
 # Building the spice from the Verilog
 
-* use openlane with the config in ./openlane to create the gds
-* open the resulting gds file in magic, and then run the following commands:
+* Use OpenLane with the [config](openlane/r2r_dac_control/config.tcl) to create the GDS
+* Open the resulting gds file in magic, and then run the following commands:
 
     extract all
     ext2sim labels on
@@ -44,3 +47,5 @@ The [spice simulation](full_spice_sim.cir) is annotated. You can repeat the expe
     ext2spice cthresh 0
     ext2spice extresist on
     ext2spice -o count.sim.spice
+
+The result is [count.sim.spice](count.sim.spice)
