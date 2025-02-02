@@ -1,0 +1,28 @@
+* r2r mixed signal
+
+*.lib /home/matt/work/asic-workshop/shuttle-2404/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
+.lib /home/matt/work/asic-workshop/shuttle-2404/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include "count.sim.spice"
+
+Xtt 0 vcc clk count[0] count[1] count[2] count[3] rst_n r2r_dac_control
+
+.param vcc=1.8
+vcc vcc 0 {vcc}
+
+* Digital clock signal
+Vclk clk 0 PULSE {vcc} 0 0.5u 1n 1n 1u 2u
+
+* reset signal with PULSE(V1 V2 Tdelay Trise Tfall Ton Tperiod)
+* start at 0v, rise to 1.8v at 2u
+Vreset rst_n 0 PULSE 0 {vcc} 4u 20p 20p 500u 1u
+
+.control
+save all
+tran 5n 40u 
+*write full_sim.raw
+*plot clk "count[0]" + 2
+set hcopydevtype=svg
+hardcopy plot.svg clk "count[0]" + 2
+quit
+.endc
+.end
