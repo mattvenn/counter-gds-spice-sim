@@ -1,0 +1,23 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Feb  1 11:26:30 2025
+[*]
+[dumpfile] "/home/matt/work/asic-workshop/shuttle-2404/tt06-analog-r2r-dac/verilog/test/r2r_dac_control.vcd"
+[dumpfile_mtime] "Sat Feb  1 11:26:07 2025"
+[dumpfile_size] 1263
+[savefile] "/home/matt/work/asic-workshop/shuttle-2404/tt06-analog-r2r-dac/verilog/test/r2r_dac_control.gtkw"
+[timestart] 0
+[size] 1848 1009
+[pos] -1 -1
+*-25.700001 5410000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 333
+[signals_width] 234
+[sst_expanded] 1
+[sst_vpaned_height] 320
+@28
+r2r_dac_control.clk
+r2r_dac_control.n_rst
+@23
+r2r_dac_control.count[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
