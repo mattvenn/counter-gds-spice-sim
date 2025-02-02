@@ -38,14 +38,16 @@ The [spice simulation](full_spice_sim.cir) is annotated. You can repeat the expe
 * Use OpenLane with the [config](openlane/r2r_dac_control/config.tcl) to create the GDS
 * Open the resulting gds file in magic, and then run the following commands:
 
-> extract all
-> ext2sim labels on
-> ext2sim
-> extresist tolerance 10
-> extresist
-> ext2spice lvs
-> ext2spice cthresh 0
-> ext2spice extresist on
-> ext2spice -o count.sim.spice
+```
+extract all
+ext2sim labels on
+ext2sim
+extresist tolerance 10
+extresist
+ext2spice lvs
+ext2spice cthresh 0
+ext2spice extresist on
+ext2spice -o count.sim.spice
+```
 
 The result is [count.sim.spice](count.sim.spice)
