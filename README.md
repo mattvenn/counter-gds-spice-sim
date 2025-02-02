@@ -23,15 +23,17 @@ The [spice simulation](full_spice_sim.cir) is annotated. You can repeat the expe
 
 # montecarlo tt_mm corner
 
-* works with [5n timestep](plots/mc/5ns)
-* fails with [10n timestep](plots/mc/10ns)
-* fails with [10n timestep and 2x slower clock](plots/mc/10ns)
+* works with [5n timestep](plots/mc/5ns) (~40s)
+* fails with [10n timestep](plots/mc/10ns) (~30s)
+* fails with [10n timestep and 2x slower clock](plots/mc/10ns) (~25s)
+
+(average run time in brackets)
 
 ## tt corner
 
-* works with [5n timestep](plots/tt/5ns)
-* works with [10n timestep](plots/tt/10ns)
-* fails with [20n timestep](plots/tt/20ns)
+* works with [5n timestep](plots/tt/5ns) (~50s)
+* works with [10n timestep](plots/tt/10ns) (~25s)
+* fails with [20n timestep](plots/tt/20ns) (~25s)
 
 # Building the spice from the Verilog
 
