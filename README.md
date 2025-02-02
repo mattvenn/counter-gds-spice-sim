@@ -3,11 +3,20 @@
 I ran into an odd simulation issue when trying to simulate the spice extracted from an OpenLane generated
 GDS.
 
-The design is a 4 bit counter, and so on every other clock there should be a pulse on bit0 of the count. But occasionaly bit0 would toggle on the negative edge.
+The design is a [4 bit counter](verilog/count.v), and so on every other clock there should be a pulse on bit0 of the count. But occasionaly bit0 would toggle on the negative edge.
 
 Neg edge toggle at 14us:
 
 ![](plots/mc/10ns/2025-02-02-14-48-05.svg)
+
+With help I tracked this down to 2 issues:
+
+* Simulation time step was too long
+* I was using the montecarlo corner, which introduces randomness
+
+The [spice simulation](full_spice_sim.cir) is annotated. You can repeat the experiment by altering it and then using [run_10.sh](run_10.sh) to run it 10 times and plot the results.
+
+# Results
 
 # tt_mm corner
 
